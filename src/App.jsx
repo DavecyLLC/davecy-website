@@ -373,7 +373,11 @@ export default function App() {
           </p>
         </div>
 
-        <form className="contact-form improved" onSubmit={handleSubmit}>
+        <form
+          className="contact-form improved"
+          action="https://formspree.io/f/mojbpknv"
+          method="POST"
+        >
 
             <label>
               Name
