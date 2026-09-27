@@ -652,3 +652,19 @@ footer p{
     border-radius:28px;
   }
 }
+
+/* Engineering offers and product inquiries */
+html{scroll-padding-top:110px}
+.engineering-services{position:relative;padding:90px 7vw}
+.engineering-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:36px 0}
+.engineering-grid article{padding:28px;border:1px solid rgba(83,213,132,.22);border-radius:20px;background:rgba(255,255,255,.035)}
+.engineering-grid h3{font-size:1.4rem;font-weight:500;margin-bottom:16px;line-height:1.4}
+.engineering-grid p,.scope-note{font-size:1rem;color:#d0d0d0;line-height:1.8;margin-bottom:18px}
+.engineering-grid strong{display:block;color:#82e3a6;font-size:.9rem;margin:22px 0 8px}
+.product-copy .product-audience{color:#82e3a6;font-size:.9rem;margin-bottom:12px}
+.product-copy .product-example{font-size:.95rem;margin-top:18px;line-height:1.7}
+.product-actions{margin-top:22px}.product-actions a{min-height:44px}
+.contact-form select{width:100%;padding:16px;border:1px solid #66766c;border-radius:12px;background:#202622;color:white;font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #82e3a6;outline-offset:4px}
+@media(max-width:760px){.engineering-grid{grid-template-columns:1fr}.engineering-services{padding:70px 5vw}.hero h1{font-size:clamp(2.1rem,8vw,3.4rem);overflow-wrap:break-word}.logo{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
