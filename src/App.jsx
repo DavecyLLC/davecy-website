@@ -4,8 +4,6 @@ import {
   BrainCircuit,
   Sparkles,
   ArrowRight,
-  Github,
-  Apple,
   Activity,
   Globe,
   ShieldCheck,
@@ -14,41 +12,27 @@ import {
   Waves,
   LineChart,
   Rocket,
-  Play,
   Mail,
   Send,
-  CheckCircle2,
 } from "lucide-react";
 
 const metrics = [
-  { value: "15+", label: "Systems Designed" },
-  { value: "Python + AI", label: "Integrated Workflows" },
-  { value: "Flutter + React", label: "Cross Platform Stack" },
-  { value: "24/7", label: "Innovation Pipeline" },
-];
-
-const productImages = [
-  "/images/akagali.png",
-  "/images/deskhealth.png",
-  "/images/aiassistant.png",
-  "/images/ai_eng.png",
-  
+  { value: "Engineering", label: "Manufacturing & R&D workflows" },
+  { value: "Python", label: "Data-driven desktop applications" },
+  { value: "Analytics", label: "Experiments, inspection & reporting" },
+  { value: "Product Design", label: "Practical tools for everyday work" },
 ];
 
 const products = [
-  "Ride Akagali",
-  "DeskHealth",
-  "AI Engineering Assistant",
-  "Predictive SPC Platform",
+  { name: "Engineering Data & Desktop Tools", image: "/images/ai_eng.png", audience: "Engineering teams, labs & small manufacturers", description: "Custom Python applications for processing test data, comparing datasets, visualizing results, and preparing reports.", example: "Example project: consolidate CSV test files and generate consistent plots and summaries." },
+  { name: "Predictive SPC Platform", image: "/images/ai_eng.png", audience: "Manufacturing & process-development teams", description: "An engineering analytics initiative focused on statistical process control, trend analysis, and process monitoring.", example: "Discuss your process data, monitoring needs, and current demonstration options." },
+  { name: "AI Engineering Assistant", image: "/images/aiassistant.png", audience: "Engineering & product-development teams", description: "A planned assistant for organizing technical questions, exploring development approaches, and guiding software and engineering workflows.", example: "Share a workflow you would like to simplify or discuss a potential pilot." },
+  { name: "Ride Akagali", image: "/images/akagali.png", audience: "Cyclists & cycling groups", description: "A cycling project focused on ride tracking, route information, and group coordination.", example: "Ask about current features, demonstrations, and opportunities to provide feedback." },
+  { name: "DeskHealth", image: "/images/deskhealth.png", audience: "Desk-based workers & workplace teams", description: "A workplace wellness project focused on hydration, movement, and everyday desk habits.", example: "Discuss the experience and whether it fits your workplace or personal routine." },
 ];
 
 export default function App() {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setSent(true);
-  }
+  const [interest, setInterest] = useState("");
 
   return (
     <main className="app">
@@ -59,7 +43,7 @@ export default function App() {
         <div className="logo">DAVECY LLC</div>
 
         <div className="nav-links">
-          <a href="#vision">Vision</a>
+          <a href="#services">Engineering Services</a>
           <a href="#products">Products</a>
           <a href="#ai">Python + AI</a>
           <a href="#contact">Contact</a>
@@ -73,18 +57,18 @@ export default function App() {
       <section className="hero">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="tag">ELITE VISUAL DIRECTION</p>
+            <p className="tag">ENGINEERING SERVICES & SOFTWARE</p>
 
             <h1>
-              Engineering Precision.
+              Engineering Expertise.
               <br />
-              <span>Nature Calmness.</span>
+              <span>Data-Driven Desktop Apps.</span>
               <br />
-              Modern AI Systems.
+              Practical Product Development.
             </h1>
 
             <p>
-              DAVECY LLC blends engineering intelligence, human-in-the-loop design, product innovation, AI systems, analytics, mobility, and calm modern experiences into premium digital ecosystems that combine advanced technology with practical human insight.
+              DAVECY LLC develops engineering software and provides support for manufacturing, R&D, and product development. Turn test data, repetitive tasks, and technical ideas into useful desktop applications, clear analysis, and practical designs.
 
             </p>
 
@@ -93,8 +77,8 @@ export default function App() {
                 Explore Products <ArrowRight size={18} />
               </a>
 
-              <a href="#ai" className="glass-btn">
-                AI Experience <BrainCircuit size={18} />
+              <a href="#services" className="glass-btn">
+                Engineering Services <BrainCircuit size={18} />
               </a>
             </div>
           </div>
@@ -105,16 +89,16 @@ export default function App() {
             <div className="floating-card top">
               <Sparkles size={20} />
               <div>
-                <strong>Modern Product Identity</strong>
-                <span>Engineering + Nature + AI</span>
+                <strong>Engineering & Software</strong>
+                <span>Design · Analyze · Automate</span>
               </div>
             </div>
 
             <div className="floating-card bottom">
               <Activity size={20} />
               <div>
-                <strong>Live Product Systems</strong>
-                <span>Interactive Experiences</span>
+                <strong>Purpose-Built Tools</strong>
+                <span>Desktop · Data · Product Development</span>
               </div>
             </div>
           </div>
@@ -132,10 +116,10 @@ export default function App() {
 
       <section id="vision" className="vision-section">
         <div className="vision-copy">
-          <p className="tag">VISUAL IDENTITY</p>
+          <p className="tag">OUR APPROACH</p>
 
           <h2>
-            Calm futuristic experiences with engineering-grade precision.
+            Start with the engineering problem. Build around the workflow.
           </h2>
 
           <p>
@@ -176,7 +160,7 @@ export default function App() {
 
             <p>
               The DAVECY ecosystem focuses on intelligent software experiences,
-              engineering-grade reliability, calm modern design, and meaningful user interaction.
+              practical engineering workflows, clear design, and meaningful user interaction.
             </p>
 
             <div className="strength-highlights">
@@ -216,87 +200,29 @@ export default function App() {
         </div>
       </section>
 
+      <section id="services" className="engineering-services">
+        <div className="section-center"><p className="tag">ENGINEERING SERVICES</p><h2>Technical experience. Useful deliverables.</h2><p className="contact-intro">Support for manufacturing, R&D, and product-development teams, with a defined scope built around your project.</p></div>
+        <div className="engineering-grid">
+          <article><h3>Data-driven desktop applications</h3><p>Python interfaces for test data, file conversion, dataset comparison, visualization, and automated reporting.</p><strong>Example engagement</strong><p>Replace a repetitive CSV-processing workflow with a desktop tool for importing, reviewing, and exporting results.</p></article>
+          <article><h3>Engineering data analysis</h3><p>Experimental analysis using DOE, ANOVA, regression, and statistical visualization.</p><strong>Example engagement</strong><p>Compare process trials and summarize the relationships between settings and measured responses.</p></article>
+          <article><h3>CAD, fixtures & product development</h3><p>Mechanical design, CAD/CAM support, tolerance evaluation, and fixtures for prototyping, inspection, and testing.</p><strong>Example engagement</strong><p>Develop a fixture concept and drawings around your part, measurement requirements, and intended use.</p></article>
+          <article><h3>Inspection & engineering visualization</h3><p>Custom tools for calibrated image measurements, STL exploration, and engineering data visualization.</p><strong>Example engagement</strong><p>Define a measurement workflow and build an interface that helps users review and export findings.</p></article>
+        </div>
+        <p className="scope-note">Project scope, deliverables, and validation needs are agreed before work begins.</p>
+        <a href="#contact" className="primary-btn" onClick={() => setInterest("Engineering services")}>Discuss an engineering project <ArrowRight size={18} /></a>
+      </section>
       <section id="products" className="products-section">
-        <div className="section-center">
-          <p className="tag">PRODUCT STRENGTH + ECOSYSTEM</p>
-          <h2>Built Beyond Simple Apps</h2>
-          <p className="contact-intro">
-            DAVECY products are designed as connected intelligent systems that can grow from simple tools into full product platforms.
-          </p>
-        </div>
-
-        <div className="ecosystem-strength-grid">
-          <div className="ecosystem-strength-card">
-            <h3>Ride Akagali</h3>
-            <p>
-              Smart cycling ecosystem with GPS tracking, route intelligence,
-              team coordination, fullscreen ride experiences, and future AI ride guidance.
-            </p>
-          </div>
-
-          <div className="ecosystem-strength-card">
-            <h3>DeskHealth</h3>
-            <p>
-              Interactive wellness platform focused on hydration, sitting analysis,
-              movement intelligence, focus support, and healthier work environments.
-            </p>
-          </div>
-
-          <div className="ecosystem-strength-card">
-            <h3>Engineering Analytics</h3>
-            <p>
-              SPC dashboards, drift prediction, process monitoring, alignment systems,
-              trend analysis, and advanced engineering visualization tools.
-            </p>
-          </div>
-
-          <div className="ecosystem-strength-card">
-            <h3>AI Product Guidance</h3>
-            <p>
-              Intelligent planning systems capable of helping users understand technology,
-              choose tools, and accelerate product development workflows.
-            </p>
-          </div>
-        </div>
-
-
-        <div className="section-center">
-          <p className="tag">PRODUCT ECOSYSTEM</p>
-          <h2>Interactive Product Universe</h2>
-        </div>
-
+        <div className="section-center"><p className="tag">SOFTWARE & PRODUCT PROJECTS</p><h2>Find the right tool for your work.</h2><p className="contact-intro">Explore Davecy’s engineering, cycling, and workplace tools. Contact us to confirm current availability, features, and demonstration options.</p></div>
         <div className="product-grid">
-          {products.map((item, index) => (
-            <div className="product-card" key={item}>
-              <div className="product-image">
-                <img src={productImages[index % productImages.length]} alt={item} />
-              </div>
-
+          {products.map((item) => (
+            <article className="product-card" key={item.name}>
+              <div className="product-image"><img src={item.image} alt={`${item.name} project illustration`} loading="lazy" /></div>
               <div className="product-copy">
-                <h3>{item}</h3>
-
-                <p>
-                  Intelligent product ecosystem with scalable engineering and AI workflows.
-                </p>
-
-                <div className="product-actions">
-                  <a href="#contact">
-                    <Apple size={16} />
-                    App Store
-                  </a>
-
-                  <a href="#contact">
-                    <Github size={16} />
-                    GitHub
-                  </a>
-
-                  <a href="#contact">
-                    <Play size={16} />
-                    Demo
-                  </a>
-                </div>
+                <p className="product-audience">{item.audience}</p><h3>{item.name}</h3>
+                <p>{item.description}</p><p className="product-example">{item.example}</p>
+                <div className="product-actions"><a href="#contact" onClick={() => setInterest(item.name)} aria-label={`Ask about ${item.name}`}>Ask about this product <ArrowRight size={16} /></a></div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
@@ -366,10 +292,9 @@ export default function App() {
       <section id="contact" className="contact-section">
         <div className="section-center">
           <p className="tag">CONTACT</p>
-          <h2>Start a Project</h2>
+          <h2>Discuss Your Project or Product Interest</h2>
           <p className="contact-intro">
-            Reach out for app development, engineering tools, AI systems, product strategy,
-            analytics dashboards, or collaboration opportunities.
+            Tell us about your engineering challenge or the product you’re interested in. Include the data, workflow, or outcome you need help with.
           </p>
         </div>
 
@@ -409,6 +334,15 @@ export default function App() {
             </label>
 
             <label>
+              Product or Service
+              <select name="interest" value={interest} onChange={(event) => setInterest(event.target.value)} required>
+                <option value="" disabled>Select a product or service</option>
+                <option value="Engineering services">Engineering services</option>
+                {products.map((item) => <option key={item.name} value={item.name}>{item.name}</option>)}
+                <option value="Other project">Other project</option>
+              </select>
+            </label>
+            <label>
               Reason for Contact
               <textarea
                 rows="6"
@@ -422,14 +356,7 @@ export default function App() {
               Send Message <Send size={18} />
             </button>
 
-            {sent && (
-              <div className="success-message">
-                <CheckCircle2 size={20} />
-                <span>
-                  Message captured successfully.
-                </span>
-              </div>
-            )}
+
           </form>
       </section>
 
